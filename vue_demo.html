@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>Vue</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <meta charset="utf-8">
+    <style type="text/css">
+       .pic{
+        width: 100px;
+        border-radius: 50%;
+       }
+       #logo{
+        width: 75px;
+       }
+       .bg-vue{
+        background-color: #4fc08d;
+       }
+       .text-vue{
+        color: #35495e;
+       }
+       #app{
+        background-image: url("img/vue_logo.png");
+        background-attachment: fixed;
+        background-size: 40% 85%;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        min-height: 100vh;
+       }
+       .list-group-item{
+        background: none;
+       }
+    </style>
+    </head>
+    
+        
+    <body>
+
+        <div id="app" class="container-fluid">
+
+            <nav class="navbar sticky-top navbar-light bg-vue navbar-expand-md">
+                <img id="logo" class="rounded-circle" src="img/start_logo.png" alt="logo">
+                <a class="navbar-brand ml-4" href="#">    
+                  <h1 class="d-inline text-vue">Vue</h1>
+                  <span class="d-none d-md-inline"> | Breve introducción </span>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+
+                <div class="collapse navbar-collapse " id="navbarToggler">
+                  <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li :class="{'active': current == 'list', 'nav-item': true}">
+                      <a class="nav-link" @click="current = 'list'" href="#">List</a>
+                    </li>
+                    <li :class="{'active': current == 'table', 'nav-item': true}">
+                      <a class="nav-link" @click="current = 'table' " href="#">Table</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="index.html">Refresh</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+
+              <main class="m-3 mt-5">
+                <div id="list" v-if="current == 'list'">
+                    <ul class="list-group-flush">
+                        <li class="list-group-item border-dark" v-for="(student,index) in students">{{index + 1}} {{student.first_name}} {{student.middle_name}} {{student.last_name}}</li>
+                    </ul>
+                </div>
+
+
+                <div id="table" v-if="current == 'table'">
+                    <form onsubmit="return false" class="form-group border border-dark p-2 d-flex justify-content-center align-items-center">
+                        <div class="form-group form-check m-0">
+                            <label class="form-check-label mr-5" v-for="team in getKeyValue(students,'team')">
+                                <input class="form-check-input" type="checkbox" name="team" :value="team" v-model="teams">{{team}}
+                            </label>
+                        </div>
+                    </form>
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th v-for="(value,key) in students[0]">{{toPhrase(key)}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="student in filterStudents">
+                                <td v-for="(value,key) in student">
+                                    <template v-if="key == 'photo' && value != null">
+                                        <img class="pic" :src="'https://raw.githubusercontent.com/rodrigr/myfakedb/master/img/'+ value">
+                                    </template>
+                                    <template v-else-if="key == 'photo' && value == null">
+                                        <img class="pic" src="https://raw.githubusercontent.com/rodrigr/myfakedb/master/img/default.png">
+                                    </template>
+                                    <template v-else>
+                                        {{value}}
+                                    </template>
+                                    
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot v-if="teams.length == 0">
+                            <tr>
+                                <td :colspan="Object.keys(students[0]).length" class="text-center text-dark">
+                                    No team has been selected
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    </div>
+                
+
+                
+            
+              </main>
+
+            
+            
+
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    	<script>
+            const app = new Vue({
+                el: '#app',
+                data:{
+                    url: "https://raw.githubusercontent.com/rodrigr/myfakedb/master/db.json",
+                    init: {
+                        method: 'GET',
+                    },
+                    students: [],
+                    teams: [],
+                    current: 'list',
+                    isTest: true
+                },
+                created(){
+                    fetch(this.url, this.init)
+                    .then(function(res){
+                        if(res.ok){
+                            return res.json()
+                        } else{
+                            throw new Error(res.status)
+                        }
+                    })
+                    .then(function(json){
+                        app.students = json.students
+                        app.teams = app.getKeyValue(json.students,"team")
+                    })
+                    .catch(function(error){
+                        console.log(error)
+                    })
+                },
+                methods:{
+                    toPhrase(string){
+                        if(string.length > 1){
+                            return string.split("_").map(e => e[0].toUpperCase() + e.slice(1)).join(" ")
+                        }else{
+                            return string[0].toUpperCase() + string.slice(1)
+                        }
+                    },
+                    getKeyValue(array,key){
+                        let result = []
+                        array.forEach(e => !result.includes(e[key]) ? result.push(e[key]) : null)
+
+                        return result
+                    }
+                },
+                computed:{
+                    filterStudents(){
+                        return this.students.filter(e => app.teams.includes(e.team))
+                    }
+                }
+            })
+        </script>
+</body>
+</html>

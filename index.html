@@ -2,49 +2,45 @@
 <html lang="en">
     <head>
     <title>Vue</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <meta charset="utf-8">
     <style type="text/css">
-        .std{
-            padding: 5px 10px;
-            background: lavender;
-            font-weight: bold;
-            width: 150px;
-            margin: 15px;
-            
-        }
-        .flex-container{
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: center;
-            align-items: center;
-            margin: 20px;
-        }
-
-        .flex-container *:first-child{
-            flex-basis: 100%;
-        }
+       .pic{
+        width: 100px;
+       }
     </style>
     </head>
     
         
     <body>
 
-        <div id="app">
+        <div id="app" class="container">
 
             <ul>
                 <li v-for="(student,index) in students">{{index + 1}} {{student.first_name}} {{student.middle_name}} {{student.last_name}}</li>
             </ul>
 
-            <table>
+            <form onsubmit="return false">
+                <label v-for="team in getKeyValue(students,'team')">
+                    <input type="checkbox" name="team" :value="team" v-model="teams">
+                    {{team}}
+                </label>
+            </form>
+
+            <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <td v-for="(value,key) in students[0]">{{key}}</td>
+                        <th v-for="(value,key) in students[0]">{{toPhrase(key)}}</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="student in students">
+                    <tr v-for="student in filterStudents">
                         <td v-for="(value,key) in student">
                             <template v-if="key == 'photo' && value != null">
-                                <img :src="'https://raw.githubusercontent.com/rodrigr/myfakedb/master/img/'+ value">
+                                <img class="pic" :src="'https://raw.githubusercontent.com/rodrigr/myfakedb/master/img/'+ value">
+                            </template>
+                            <template v-else-if="key == 'photo' && value == null">
+                                <img class="pic" src="https://raw.githubusercontent.com/rodrigr/myfakedb/master/img/default.png">
                             </template>
                             <template v-else>
                                 {{value}}
@@ -58,8 +54,9 @@
             
 
         </div>
-
-      
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     	<script>
             const app = new Vue({
@@ -69,7 +66,8 @@
                     init: {
                         method: 'GET',
                     },
-                    students: []
+                    students: [],
+                    teams: []
                 },
                 created(){
                     fetch(this.url, this.init)
@@ -82,19 +80,32 @@
                     })
                     .then(function(json){
                         app.students = json.students
+                        app.teams = app.getKeyValue(json.students,"team")
                     })
                     .catch(function(error){
                         console.log(error)
                     })
+                },
+                methods:{
+                    toPhrase(string){
+                        if(string.length > 1){
+                            return string.split("_").map(e => e[0].toUpperCase() + e.slice(1)).join(" ")
+                        }else{
+                            return string[0].toUpperCase() + string.slice(1)
+                        }
+                    },
+                    getKeyValue(array,key){
+                        let result = []
+                        array.forEach(e => !result.includes(e[key]) ? result.push(e[key]) : null)
+
+                        return result
+                    }
+                },
+                computed:{
+                    filterStudents(){
+                        return this.students.filter(e => app.teams.includes(e.team))
+                    }
                 }
-                // methods:{
-                //     mayus(str){
-                //         return str.toUpperCase()
-                //     },
-                //     mostrar(key){
-                //         return this.mesas.includes(key)
-                //     }
-                // },
                 // components: {
                 //     std:{
                 //         props: ["name","note","index"],

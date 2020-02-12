@@ -2,8 +2,11 @@
 <html lang="en">
     <head>
     <title>Vue</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <style type="text/css">
        .pic{
         width: 100px;
@@ -81,18 +84,18 @@
                 </div>
               </nav>
 
-              <main class="m-3 mt-5">
+              <main class="m-md-3 mt-5">
                 <div id="list" v-if="current == 'list'">
                     <h2 class="text-vue text-center">Students</h2>
-                    <ul class="list-group-flush overflow-auto" style="max-height: 65vh">
-                        <li class="list-group-item d-flex px-5 justify-content-between border-dark" v-for="(student,index) in students">
+                    <ul class="list-group-flush overflow-auto p-0" style="max-height: 65vh">
+                        <li class="list-group-item d-flex flex-row flex-wrap px-md-5 justify-content-between align-items-center border-dark" v-for="(student,index) in students">
                             <span>
                                 {{index + 1}} 
                                 <template v-if="student.photo != null">
-                                    <img class="small pic mx-4" :alt="student.first_name + ' photo'" :src="'https://raw.githubusercontent.com/rodrigr/myfakedb/master/img/' + student.photo">
+                                    <img class="small pic mx-4" :alt="student.first_name + ' photo'" :src="'https://raw.githubusercontent.com/rodrigr/vue-demo/master/img/' + student.photo">
                                 </template>
                                 <template v-else>
-                                    <img class="small pic mx-4" alt="deafult user photo" src="https://raw.githubusercontent.com/rodrigr/myfakedb/master/img/default.png">
+                                    <img class="small pic mx-4" alt="deafult user photo" src="https://raw.githubusercontent.com/rodrigr/vue-demo/master/img/default.png">
                                 </template>
                                  
                                 {{student.first_name}} 
@@ -101,14 +104,14 @@
                             </span>
                             <span>
                                 Team {{student.team}}
-                                <img class="small pic" :alt="student.team + ' logo'" :src="'https://raw.githubusercontent.com/rodrigr/myfakedb/master/img/' + student.team + '_logo.png'">
+                                <img class="small pic" :alt="student.team + ' logo'" :src="'https://raw.githubusercontent.com/rodrigr/vue-demo/master/img/' + student.team + '_logo.png'">
                             </span>
                         </li>
                     </ul>
                 </div>
 
 
-                <div id="table" v-if="current == 'table'">
+                <div id="table" v-if="current == 'table'" class="table-responsive">
                     <form onsubmit="return false" class="form-group border border-dark rounded p-2 d-flex flex-column justify-content-center align-items-center w-50 mx-auto" style="background-color: rgba(0,0,0,.2)">
                         <legend class="text-vue text-center">Select Team:</legend>
                         <div class="form-group form-check m-0">
@@ -128,10 +131,10 @@
                             <tr v-for="student in filterStudents">
                                 <td v-for="(value,key) in student">
                                     <template v-if="key == 'photo' && value != null">
-                                        <img :alt="student.first_name + ' photo'" class="pic" :src="'https://raw.githubusercontent.com/rodrigr/myfakedb/master/img/'+ value">
+                                        <img :alt="student.first_name + ' photo'" class="pic" :src="'https://raw.githubusercontent.com/rodrigr/vue-demo/master/img/'+ value">
                                     </template>
                                     <template v-else-if="key == 'photo' && value == null">
-                                        <img alt="default user photo" class="pic" src="https://raw.githubusercontent.com/rodrigr/myfakedb/master/img/default.png">
+                                        <img alt="default user photo" class="pic" src="https://raw.githubusercontent.com/rodrigr/vue-demo/master/img/default.png">
                                     </template>
                                     <template v-else>
                                         {{value != null ? value : "-"}}
@@ -167,7 +170,7 @@
             const app = new Vue({
                 el: '#app',
                 data:{
-                    url: "https://raw.githubusercontent.com/rodrigr/myfakedb/master/db.json",
+                    url: "https://raw.githubusercontent.com/rodrigr/vue-demo/master/db.json",
                     init: {
                         method: 'GET',
                     },

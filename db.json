@@ -1,201 +1,203 @@
-[
-  {
-    "id": 1,
-    "first_name": "Lendro",
-    "last_name": "Álvarez",
-    "team": "MIL3R",
-    "teamId": 1
-  },
-  {
-    "id": 2,
-    "first_name": "Mauro",
-    "middle_name": "Nicolás",
-    "last_name": "Álvarez",
-    "team": "MIL3R",
-    "teamId": 1
-  },
-  {
-    "id": 3,
-    "first_name": "Erica",
-    "middle_name": null,
-    "last_name": "Curima",
-    "team": "MIL3R",
-    "teamId": 1
-  },
-  {
-    "id": 4,
-    "first_name": "Ezequiel",
-    "middle_name": null,
-    "last_name": "Dapena",
-    "team": "MIL3R",
-    "teamId": 1
-  },
-  {
-    "id": 5,
-    "first_name": "Iván",
-    "middle_name": null,
-    "last_name": "De Oli",
-    "team": "MIL3R",
-    "teamId": 1
-  },
-  {
-    "id": 6,
-    "first_name": "Román",
-    "middle_name": null,
-    "last_name": "Díaz",
-    "team": "MIL3R",
-    "teamId": 1
-  },
-  {
-    "id": 7,
-    "first_name": "Alan",
-    "middle_name": "Yoel",
-    "last_name": "Fernández",
-    "team": "Bananaz",
-    "teamId": 2
-  },
-  {
-    "id": 8,
-    "first_name": "Lucio",
-    "middle_name": "Alberto",
-    "last_name": "Figueroa",
-    "team": "Bananaz",
-    "teamId": 2
-  },
-  {
-    "id": 9,
-    "first_name": "Nicolás",
-    "middle_name": "Esteban",
-    "last_name": "Fresco",
-    "team": "Bananaz",
-    "teamId": 2
-  },
-  {
-    "id": 10,
-    "first_name": "Lucas",
-    "middle_name": null,
-    "last_name": "Gallardo",
-    "team": "Bananaz",
-    "teamId": 2
-  },
-  {
-    "id": 11,
-    "first_name": "Matías",
-    "middle_name": null,
-    "last_name": "Guerrero",
-    "team": "Bananaz",
-    "teamId": 2
-  },
-  {
-    "id": 12,
-    "first_name": "Alexis",
-    "middle_name": "Nicolás",
-    "last_name": "Gutiérrez",
-    "team": "Bananaz",
-    "teamId": 2
-  },
-  {
-    "id": 13,
-    "first_name": "Lucas",
-    "middle_name": "Alejandro",
-    "last_name": "Herrmann",
-    "team": "Hello World",
-    "teamId": 3
-  },
-  {
-    "id": 14,
-    "first_name": "Nahuel",
-    "middle_name": null,
-    "last_name": "Jovine",
-    "team": "Hello World",
-    "teamId": 3
-  },
-  {
-    "id": 15,
-    "first_name": "Nahuel",
-    "middle_name": "Ezequiel",
-    "last_name": "López",
-    "team": "Hello World",
-    "teamId": 3
-  },
-  {
-    "id": 16,
-    "first_name": "Eduardo",
-    "middle_name": "Antonio",
-    "last_name": "Lucero",
-    "team": "Hello World",
-    "teamId": 3
-  },
-  {
-    "id": 17,
-    "first_name": "Rocío",
-    "middle_name": null,
-    "last_name": "Machao",
-    "team": "Hello World",
-    "teamId": 3
-  },
-  {
-    "id": 18,
-    "first_name": "Diego",
-    "middle_name": "Gastón",
-    "last_name": "Morinigo",
-    "team": "Hello World",
-    "teamId": 3
-  },
-  {
-    "id": 19,
-    "first_name": "Gian",
-    "middle_name": "Franco",
-    "last_name": "Palomeque",
-    "team": "Hello World",
-    "teamId": 3
-  },
-  {
-    "id": 20,
-    "first_name": "José",
-    "middle_name": "Luis",
-    "last_name": "Pérez",
-    "team": "Steam Pixa",
-    "teamId": 4
-  },
-  {
-    "id": 21,
-    "first_name": "Juan",
-    "middle_name": "Gabriel",
-    "last_name": "Ríos",
-    "team": "Steam Pixa",
-    "teamId": 4
-  },
-  {
-    "id": 22,
-    "first_name": "Elías",
-    "middle_name": null,
-    "last_name": "Rodríguez",
-    "team": "Steam Pixa",
-    "teamId": 4
-  },
-  {
-    "id": 23,
-    "first_name": "Agustín",
-    "middle_name": null,
-    "last_name": "Sardella",
-    "team": "Steam Pixa",
-    "teamId": 4
-  },
-  {
-    "id": 24,
-    "first_name": "Nicolás",
-    "middle_name": null,
-    "last_name": "Sauco",
-    "team": "Steam Pixa",
-    "teamId": 4
-  },
-  {
-    "id": 25,
-    "first_name": "Ariel",
-    "middle_name": "Nicolás",
-    "last_name": "Sequeira",
-    "team": "Steam Pixa",
-    "teamId": 4
-  },
-]
+{
+  "students":[
+    {
+      "id": 1,
+      "first_name": "Lendro",
+      "last_name": "Álvarez",
+      "team": "MIL3R",
+      "teamId": 1
+    },
+    {
+      "id": 2,
+      "first_name": "Mauro",
+      "middle_name": "Nicolás",
+      "last_name": "Álvarez",
+      "team": "MIL3R",
+      "teamId": 1
+    },
+    {
+      "id": 3,
+      "first_name": "Erica",
+      "middle_name": null,
+      "last_name": "Curima",
+      "team": "MIL3R",
+      "teamId": 1
+    },
+    {
+      "id": 4,
+      "first_name": "Ezequiel",
+      "middle_name": null,
+      "last_name": "Dapena",
+      "team": "MIL3R",
+      "teamId": 1
+    },
+    {
+      "id": 5,
+      "first_name": "Iván",
+      "middle_name": null,
+      "last_name": "De Oli",
+      "team": "MIL3R",
+      "teamId": 1
+    },
+    {
+      "id": 6,
+      "first_name": "Román",
+      "middle_name": null,
+      "last_name": "Díaz",
+      "team": "MIL3R",
+      "teamId": 1
+    },
+    {
+      "id": 7,
+      "first_name": "Alan",
+      "middle_name": "Yoel",
+      "last_name": "Fernández",
+      "team": "Bananaz",
+      "teamId": 2
+    },
+    {
+      "id": 8,
+      "first_name": "Lucio",
+      "middle_name": "Alberto",
+      "last_name": "Figueroa",
+      "team": "Bananaz",
+      "teamId": 2
+    },
+    {
+      "id": 9,
+      "first_name": "Nicolás",
+      "middle_name": "Esteban",
+      "last_name": "Fresco",
+      "team": "Bananaz",
+      "teamId": 2
+    },
+    {
+      "id": 10,
+      "first_name": "Lucas",
+      "middle_name": null,
+      "last_name": "Gallardo",
+      "team": "Bananaz",
+      "teamId": 2
+    },
+    {
+      "id": 11,
+      "first_name": "Matías",
+      "middle_name": null,
+      "last_name": "Guerrero",
+      "team": "Bananaz",
+      "teamId": 2
+    },
+    {
+      "id": 12,
+      "first_name": "Alexis",
+      "middle_name": "Nicolás",
+      "last_name": "Gutiérrez",
+      "team": "Bananaz",
+      "teamId": 2
+    },
+    {
+      "id": 13,
+      "first_name": "Lucas",
+      "middle_name": "Alejandro",
+      "last_name": "Herrmann",
+      "team": "Hello World",
+      "teamId": 3
+    },
+    {
+      "id": 14,
+      "first_name": "Nahuel",
+      "middle_name": null,
+      "last_name": "Jovine",
+      "team": "Hello World",
+      "teamId": 3
+    },
+    {
+      "id": 15,
+      "first_name": "Nahuel",
+      "middle_name": "Ezequiel",
+      "last_name": "López",
+      "team": "Hello World",
+      "teamId": 3
+    },
+    {
+      "id": 16,
+      "first_name": "Eduardo",
+      "middle_name": "Antonio",
+      "last_name": "Lucero",
+      "team": "Hello World",
+      "teamId": 3
+    },
+    {
+      "id": 17,
+      "first_name": "Rocío",
+      "middle_name": null,
+      "last_name": "Machao",
+      "team": "Hello World",
+      "teamId": 3
+    },
+    {
+      "id": 18,
+      "first_name": "Diego",
+      "middle_name": "Gastón",
+      "last_name": "Morinigo",
+      "team": "Hello World",
+      "teamId": 3
+    },
+    {
+      "id": 19,
+      "first_name": "Gian",
+      "middle_name": "Franco",
+      "last_name": "Palomeque",
+      "team": "Hello World",
+      "teamId": 3
+    },
+    {
+      "id": 20,
+      "first_name": "José",
+      "middle_name": "Luis",
+      "last_name": "Pérez",
+      "team": "Steam Pixa",
+      "teamId": 4
+    },
+    {
+      "id": 21,
+      "first_name": "Juan",
+      "middle_name": "Gabriel",
+      "last_name": "Ríos",
+      "team": "Steam Pixa",
+      "teamId": 4
+    },
+    {
+      "id": 22,
+      "first_name": "Elías",
+      "middle_name": null,
+      "last_name": "Rodríguez",
+      "team": "Steam Pixa",
+      "teamId": 4
+    },
+    {
+      "id": 23,
+      "first_name": "Agustín",
+      "middle_name": null,
+      "last_name": "Sardella",
+      "team": "Steam Pixa",
+      "teamId": 4
+    },
+    {
+      "id": 24,
+      "first_name": "Nicolás",
+      "middle_name": null,
+      "last_name": "Sauco",
+      "team": "Steam Pixa",
+      "teamId": 4
+    },
+    {
+      "id": 25,
+      "first_name": "Ariel",
+      "middle_name": "Nicolás",
+      "last_name": "Sequeira",
+      "team": "Steam Pixa",
+      "teamId": 4
+    },
+  ]
+}

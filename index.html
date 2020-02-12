@@ -42,8 +42,14 @@
                 </thead>
                 <tbody>
                     <tr v-for="student in students">
-                        <td v-for="value in student">
-                            {{value}}
+                        <td v-for="(value,key) in student">
+                            <template v-if="key == 'photo' && value != null">
+                                <img :src="'https://raw.githubusercontent.com/rodrigr/myfakedb/master/img/'+ value">
+                            </template>
+                            <template v-else>
+                                {{value}}
+                            </template>
+                            
                         </td>
                     </tr>
                 </tbody>

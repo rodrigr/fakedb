@@ -4,6 +4,7 @@
       "id": 1,
       "first_name": "Lendro",
       "last_name": "Álvarez",
+      "photo": "lean.png",
       "team": "MIL3R",
       "teamId": 1
     },
@@ -12,6 +13,7 @@
       "first_name": "Mauro",
       "middle_name": "Nicolás",
       "last_name": "Álvarez",
+      "photo": "meji.png",
       "team": "MIL3R",
       "teamId": 1
     },
@@ -20,6 +22,7 @@
       "first_name": "Erica",
       "middle_name": null,
       "last_name": "Curima",
+      "photo": "eri.png",
       "team": "MIL3R",
       "teamId": 1
     },
@@ -28,6 +31,7 @@
       "first_name": "Ezequiel",
       "middle_name": null,
       "last_name": "Dapena",
+      "photo": "eze.png",
       "team": "MIL3R",
       "teamId": 1
     },
@@ -36,6 +40,7 @@
       "first_name": "Iván",
       "middle_name": null,
       "last_name": "De Oli",
+      "photo": null,
       "team": "MIL3R",
       "teamId": 1
     },
@@ -44,6 +49,7 @@
       "first_name": "Román",
       "middle_name": null,
       "last_name": "Díaz",
+      "photo": "roman.png",
       "team": "MIL3R",
       "teamId": 1
     },
@@ -52,6 +58,7 @@
       "first_name": "Alan",
       "middle_name": "Yoel",
       "last_name": "Fernández",
+      "photo": null,
       "team": "Bananaz",
       "teamId": 2
     },
@@ -60,6 +67,7 @@
       "first_name": "Lucio",
       "middle_name": "Alberto",
       "last_name": "Figueroa",
+      "photo": "lucio.png",
       "team": "Bananaz",
       "teamId": 2
     },
@@ -68,6 +76,7 @@
       "first_name": "Nicolás",
       "middle_name": "Esteban",
       "last_name": "Fresco",
+      "photo": "fresco.png",
       "team": "Bananaz",
       "teamId": 2
     },
@@ -76,6 +85,7 @@
       "first_name": "Lucas",
       "middle_name": null,
       "last_name": "Gallardo",
+      "photo": null,
       "team": "Bananaz",
       "teamId": 2
     },
@@ -84,6 +94,7 @@
       "first_name": "Matías",
       "middle_name": null,
       "last_name": "Guerrero",
+      "photo": "mati.png",
       "team": "Bananaz",
       "teamId": 2
     },
@@ -92,6 +103,7 @@
       "first_name": "Alexis",
       "middle_name": "Nicolás",
       "last_name": "Gutiérrez",
+      "photo": "teo.png",
       "team": "Bananaz",
       "teamId": 2
     },
@@ -100,6 +112,7 @@
       "first_name": "Lucas",
       "middle_name": "Alejandro",
       "last_name": "Herrmann",
+      "photo": null,
       "team": "Hello World",
       "teamId": 3
     },
@@ -108,6 +121,7 @@
       "first_name": "Nahuel",
       "middle_name": null,
       "last_name": "Jovine",
+      "photo": null,
       "team": "Hello World",
       "teamId": 3
     },
@@ -116,6 +130,7 @@
       "first_name": "Nahuel",
       "middle_name": "Ezequiel",
       "last_name": "López",
+      "photo": null,
       "team": "Hello World",
       "teamId": 3
     },
@@ -124,6 +139,7 @@
       "first_name": "Eduardo",
       "middle_name": "Antonio",
       "last_name": "Lucero",
+      "photo": "edu.png",
       "team": "Hello World",
       "teamId": 3
     },
@@ -132,6 +148,7 @@
       "first_name": "Rocío",
       "middle_name": null,
       "last_name": "Machao",
+      "photo": "ro.png",
       "team": "Hello World",
       "teamId": 3
     },
@@ -140,6 +157,7 @@
       "first_name": "Diego",
       "middle_name": "Gastón",
       "last_name": "Morinigo",
+      "photo": "diego.png",
       "team": "Hello World",
       "teamId": 3
     },
@@ -148,6 +166,7 @@
       "first_name": "Gian",
       "middle_name": "Franco",
       "last_name": "Palomeque",
+      "photo": null,
       "team": "Hello World",
       "teamId": 3
     },
@@ -156,6 +175,7 @@
       "first_name": "José",
       "middle_name": "Luis",
       "last_name": "Pérez",
+      "photo": null,
       "team": "Steam Pixa",
       "teamId": 4
     },
@@ -164,6 +184,7 @@
       "first_name": "Juan",
       "middle_name": "Gabriel",
       "last_name": "Ríos",
+      "photo": "gabi.png",
       "team": "Steam Pixa",
       "teamId": 4
     },
@@ -172,6 +193,7 @@
       "first_name": "Elías",
       "middle_name": null,
       "last_name": "Rodríguez",
+      "photo": "eli.png",
       "team": "Steam Pixa",
       "teamId": 4
     },
@@ -180,6 +202,7 @@
       "first_name": "Agustín",
       "middle_name": null,
       "last_name": "Sardella",
+      "photo": null,
       "team": "Steam Pixa",
       "teamId": 4
     },
@@ -188,6 +211,7 @@
       "first_name": "Nicolás",
       "middle_name": null,
       "last_name": "Sauco",
+      "photo": "nicosauco.png",
       "team": "Steam Pixa",
       "teamId": 4
     },
@@ -196,6 +220,7 @@
       "first_name": "Ariel",
       "middle_name": "Nicolás",
       "last_name": "Sequeira",
+      "photo": "ari.png",
       "team": "Steam Pixa",
       "teamId": 4
     }

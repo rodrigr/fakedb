@@ -9,6 +9,11 @@
         width: 100px;
         border-radius: 50%;
        }
+
+       .pic.small{
+        width: 50px;
+        border: 2px solid #4fc08d;
+       }
        #logo{
         width: 75px;
        }
@@ -64,8 +69,21 @@
 
               <main class="m-3 mt-5">
                 <div id="list" v-if="current == 'list'">
+                    <h2 class="text-vue text-center">Students</h2>
                     <ul class="list-group-flush">
-                        <li class="list-group-item border-dark" v-for="(student,index) in students">{{index + 1}} {{student.first_name}} {{student.middle_name}} {{student.last_name}}</li>
+                        <li class="list-group-item border-dark" v-for="(student,index) in students">
+                            {{index + 1}} 
+                            <template v-if="student.photo != null">
+                                <img class="small pic mx-4" :alt="student.first_name + ' photo'" :src="'https://raw.githubusercontent.com/rodrigr/myfakedb/master/img/' + student.photo">
+                            </template>
+                            <template v-else>
+                                <img class="small pic mx-4" alt="deafult user photo" src="https://raw.githubusercontent.com/rodrigr/myfakedb/master/img/default.png">
+                            </template>
+                             
+                            {{student.first_name}} 
+                            {{student.middle_name}} 
+                            {{student.last_name}}
+                        </li>
                     </ul>
                 </div>
 
@@ -89,10 +107,10 @@
                             <tr v-for="student in filterStudents">
                                 <td v-for="(value,key) in student">
                                     <template v-if="key == 'photo' && value != null">
-                                        <img class="pic" :src="'https://raw.githubusercontent.com/rodrigr/myfakedb/master/img/'+ value">
+                                        <img :alt="student.first_name + ' photo'" class="pic" :src="'https://raw.githubusercontent.com/rodrigr/myfakedb/master/img/'+ value">
                                     </template>
                                     <template v-else-if="key == 'photo' && value == null">
-                                        <img class="pic" src="https://raw.githubusercontent.com/rodrigr/myfakedb/master/img/default.png">
+                                        <img alt="default user photo" class="pic" src="https://raw.githubusercontent.com/rodrigr/myfakedb/master/img/default.png">
                                     </template>
                                     <template v-else>
                                         {{value}}

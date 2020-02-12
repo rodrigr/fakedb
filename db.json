@@ -105,7 +105,7 @@
   {
     "id": 14,
     "first_name": "Nahuel",
-    "middle_name": "null,
+    "middle_name": null,
     "last_name": "Jovine",
     "team": "Hello World",
     "teamId": 3

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>Vue</title>
+    <style type="text/css">
+        .std{
+            padding: 5px 10px;
+            background: lavender;
+            font-weight: bold;
+            width: 150px;
+            margin: 15px;
+            
+        }
+        .flex-container{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .flex-container *:first-child{
+            flex-basis: 100%;
+        }
+    </style>
+    </head>
+    
+        
+    <body>
+
+        <div id="app">
+
+            <ul>
+                <li v-for="(student,index) in students">{{index + 1}} {{student.first_name}} {{student.middle_name}} {{student.last_name}}</li>
+            </ul>
+
+            <table>
+                <thead>
+                    <tr>
+                        <td v-for="(value,key) in students[0]">{{key}}</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="student in students">
+                        <td v-for="value in student">
+                            {{value}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            
+
+        </div>
+
+      
+    	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    	<script>
+            const app = new Vue({
+                el: '#app',
+                data:{
+                    url: "https://raw.githubusercontent.com/rodrigr/myfakedb/master/db.json",
+                    init: {
+                        method: 'GET',
+                    },
+                    students: []
+                },
+                created(){
+                    fetch(this.url, this.init)
+                    .then(function(res){
+                        if(res.ok){
+                            return res.json()
+                        } else{
+                            throw new Error(res.status)
+                        }
+                    })
+                    .then(function(json){
+                        app.students = json.students
+                    })
+                    .catch(function(error){
+                        console.log(error)
+                    })
+                }
+                // methods:{
+                //     mayus(str){
+                //         return str.toUpperCase()
+                //     },
+                //     mostrar(key){
+                //         return this.mesas.includes(key)
+                //     }
+                // },
+                // components: {
+                //     std:{
+                //         props: ["name","note","index"],
+                //         template: `
+                //                     <div class='std'>
+                //                     <p>{{index}}</p>
+                //                     <p>Name: {{name}}</p>
+                //                     <p>Note: {{note}}</p>
+                //                     </div>
+                //         `
+                //     }
+                // }
+            })
+        </script>
+</body>
+</html>

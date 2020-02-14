@@ -29,7 +29,7 @@ export const app = Vue.component('app',{
 		}
 
 	},
-    template: `<div>
+    template: `<div class="container-fluid">
     			 <navigator @changeView="handelView" :current-view="current"></navigator>
 
 	              <main class="m-md-3 mt-5">

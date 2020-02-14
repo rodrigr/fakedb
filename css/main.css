@@ -1,5 +1,11 @@
 body{
   margin: 0;
+  background-color: gray;
+  background-image: url("../img/vue_logo.png");
+  background-size: 75px 75px;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
 .pic{
@@ -51,14 +57,6 @@ body{
   color: #35495e;
 }
 
-#mv{
-  background-color: gray;
-  background-image: url("../img/vue_logo.png");
-  background-size: 75px 75px;
-  background-position: center;
-  background-attachment: fixed;
-  min-height: 100vh;
-}
 
 .list-group-item{
   background: none;

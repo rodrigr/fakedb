@@ -7,7 +7,7 @@ export const myNav = Vue.component('navigator', {
     }
   },
   template: `
-                <div class="row">
+                <div id="navigator" class="row">
                   <nav class="navbar sticky-top navbar-light bg-vue navbar-expand-md col">
                     <img id="logo" class="rounded-circle" src="img/start_logo.png" alt="logo">
                     <a class="navbar-brand ml-4" href="#">    

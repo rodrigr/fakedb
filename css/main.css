@@ -15,6 +15,12 @@ body{
   border: 5px solid #35495e;
 }
 
+.pic.profile:hover{
+  border-radius: 10px;
+  position: relative;
+  z-index: 9999;
+}
+
 .back{
   width: 5em;
   position: fixed;
@@ -43,7 +49,7 @@ body{
 }
 
 .border-vue{
-  border-color: #4fc08d !important;
+  border-color: #35495e !important;
 }
 
 #logo{
@@ -78,3 +84,4 @@ body{
   background: #4fc08d;
   border-radius: 10px;
 }
+

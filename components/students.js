@@ -1,9 +1,9 @@
 export const students = Vue.component('students',{
 	props: ['students','teams'],
-	template: `<div id="list" class="bubble">
-                    <h2 class="text-vue text-center">Students</h2>
+	template: `<div id="list" class="bubble text-vue">
+                    <h2 class="text-center">Students</h2>
                     <ul class="list-group-flush overflow-auto p-0" style="max-height: 65vh">
-                        <li class="list-group-item px-md-5 border-dark" v-for="(student,index) in students">
+                        <li class="list-group-item px-md-5 border-vue font-weight-bold" v-for="(student,index) in students">
                             <div class="row justify-content-between">
                                 <span class="col-md-6">
                                     {{index + 1}} 

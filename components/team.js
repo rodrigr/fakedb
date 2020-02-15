@@ -13,7 +13,7 @@ export const team = Vue.component('team', {
 										<img class="pic bg-white" alt="default user photo" src="https://raw.githubusercontent.com/rodrigr/vue-demo/master/img/default.png">
 									</template>
 								</div>
-								<h3 class="text-vue mt-3 bubble">{{student.first_name}} {{student.middle_name}}</h3>
+								<h3 @click="$emit('changeView',{page: 'profile', student: student})" class="pointer text-vue mt-3 bubble">{{student.first_name}} {{student.middle_name}}</h3>
 							</div>
 						</template>
 					</div>

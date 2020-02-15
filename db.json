@@ -41,7 +41,7 @@
       "first_name": "Iván",
       "middle_name": null,
       "last_name": "De Oli",
-      "photo": null,
+      "photo": "ivan.png",
       "team": "MIL3R",
       "teamId": 1
     },
@@ -203,7 +203,7 @@
       "first_name": "Agustín",
       "middle_name": null,
       "last_name": "Sardella",
-      "photo": null,
+      "photo": "agus.png",
       "team": "Steam Pixa",
       "teamId": 4
     },

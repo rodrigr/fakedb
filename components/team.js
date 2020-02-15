@@ -2,7 +2,7 @@ export const team = Vue.component('team', {
 	props: ['students', 'teams', 'currentTeam'],
 	template: `<div>
 					<h2 class="text-vue bubble text-center w-50 mx-auto mb-3">{{currentTeam}}</h2>
-					<div class="row">
+					<div class="row justify-content-around">
 						<template v-for="student in students" v-if="student.team == currentTeam">
 							<div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
 								<div @click="$emit('changeView',{page: 'profile', student: student})" class="pointer">

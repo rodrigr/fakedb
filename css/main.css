@@ -13,12 +13,16 @@ body{
   height: 200px;
   border-radius: 50%;
   border: 5px solid #35495e;
+  background-color: white;
+}
+
+.selected{
+  background-color: rgba(128,128,128,.9);
+  border-radius: 10px;
 }
 
 .pic.profile:hover{
   border-radius: 10px;
-  position: relative;
-  z-index: 9999;
 }
 
 .back{
@@ -30,6 +34,8 @@ body{
 
 .pic:hover{
   transform: scale(1.5);
+  position: relative;
+  z-index: 9999;
 }
 
 .bubble{

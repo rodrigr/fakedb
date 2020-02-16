@@ -1,12 +1,12 @@
-let mv
+let vm
 
 start()
 
 async function start(){
     await import('./components/app.js')
 
-    mv = new Vue({
-        el: '#mv',
+    vm = new Vue({
+        el: '#wrapper',
         data: {
             url: "https://raw.githubusercontent.com/rodrigr/vue-demo/master/db.json",
             init: {
@@ -25,8 +25,8 @@ async function start(){
                 }
             })
             .then(function(json){
-                mv.students = json.students
-                mv.teams = mv.getKeyValue(json.students,"team")
+                vm.students = json.students
+                vm.teams = vm.getKeyValue(json.students,"team")
             })
             .catch(function(error){
                 console.log(error)

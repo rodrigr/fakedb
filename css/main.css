@@ -1,3 +1,10 @@
+/*------------General Styling-----------*/
+
+:root {
+  --vue-primary: #4fc08d;
+  --vue-secondary: #35495e;
+}
+
 body{
   margin: 0;
   background-color: gray;
@@ -8,20 +15,19 @@ body{
   min-height: 100vh;
 }
 
-.pic{
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  border: 5px solid #35495e;
-  background-color: white;
+.bg-vue{
+  background-color: var(--vue-primary);
+}
+.text-vue{
+  color: var(--vue-secondary);
+}
+
+.border-vue{
+  border-color: var(--vue-secondary) !important;
 }
 
 .selected{
   background-color: rgba(128,128,128,.9);
-  border-radius: 10px;
-}
-
-.pic.profile:hover{
   border-radius: 10px;
 }
 
@@ -30,12 +36,6 @@ body{
   position: fixed;
   bottom: 10px;
   right: 10px;
-}
-
-.pic:hover{
-  transform: scale(1.5);
-  position: relative;
-  z-index: 9999;
 }
 
 .bubble{
@@ -48,31 +48,42 @@ body{
   cursor: pointer;
 }
 
+.list-group-item{
+  background: none;
+}
+
+
+/*------------Image Styling-----------*/
+
+.pic{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid var(--vue-secondary);
+  background-color: white;
+}
+
+.pic.profile:hover{
+  border-radius: 10px;
+}
+
+.pic:hover{
+  transform: scale(1.5);
+  position: relative;
+  z-index: 9999;
+}
+
 .pic.small{
   width: 50px;
   height: 50px;
   border-width: 2px
 }
 
-.border-vue{
-  border-color: #35495e !important;
-}
-
 #logo{
   width: 75px;
 }
 
-.bg-vue{
-  background-color: #4fc08d;
-}
-.text-vue{
-  color: #35495e;
-}
-
-
-.list-group-item{
-  background: none;
-}
+/*------------Scrollbars Styling------------*/
 
 /* width */
 ::-webkit-scrollbar {
@@ -81,13 +92,13 @@ body{
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #35495e;
+  background: var(--vue-secondary);
   border-radius: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #4fc08d;
+  background: var(--vue-primary);
   border-radius: 10px;
 }
 

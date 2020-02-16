@@ -9,10 +9,11 @@ export const app = Vue.component('app',{
 	props : ['students','teams'],
 	data(){
 		return {
-	        current: 'home',
-	        currentTeam: '',
-	        currentStudent: '',
-	        history: [],
+			current: 'home',
+			currentTeam: '',
+			currentStudent: '',
+			studentsView: 'list',
+			history: [],
 		}
 	},
 	methods: {
@@ -21,6 +22,7 @@ export const app = Vue.component('app',{
 			this.current = event.page != undefined ? event.page : this.current 
 			this.currentTeam = event.team != undefined ? event.team : this.currentTeam
 			this.currentStudent = event.student != undefined ? event.student : this.currentStudent
+			this.studentsView = event.studentsView != undefined ? event.studentsView : this.studentsView
 
 		},
 		goBack(){
@@ -29,16 +31,16 @@ export const app = Vue.component('app',{
 		}
 
 	},
-    template: `<div class="container-fluid">
-    			 <navigator @changeView="handelView" :current-view="current"></navigator>
+	template: `<div class="container-fluid">
+	<navigator @changeView="handelView" :current-view="current"></navigator>
 
-	              <main class="m-md-3 mt-5">
-	                <component :is="current"  :students="students" :teams="teams" :currentTeam="currentTeam" :currentStudent="currentStudent" @changeView="handelView"></component>
-	              </main>
+	<main class="m-md-3 mt-5">
+	<component :is="current"  :students="students" :teams="teams" :currentTeam="currentTeam" :currentStudent="currentStudent" :studentsView="studentsView" @changeView="handelView"></component>
+	</main>
 
-	              <template v-if="history.length > 0">
-	              	<div @click="goBack" class="back pointer text-vue bg-vue rounded-circle d-flex justify-content-center p-3"><i class="fas fa-undo fa-3x"></i></div>
-	              </template>
-	              
-    		  </div>`
+	<template v-if="history.length > 0">
+	<div @click="goBack" class="back pointer text-vue bg-vue rounded-circle d-flex justify-content-center p-3"><i class="fas fa-undo fa-3x"></i></div>
+	</template>
+	
+	</div>`
 })
